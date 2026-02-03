@@ -145,17 +145,17 @@ onMounted(async () => {
               <img
                 src="https://imgs.search.brave.com/mtYH1JBc_UsB2ULPf1avlwEPjZZbFmZKWXVMJ2ZqQvQ/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzA5LzI2LzA0Lzc0/LzM2MF9GXzkyNjA0/NzQ1Nl8yWjJmNzJC/ODhkQk9GS0F1c3Ra/RThRSDZkblpGV3FC/Ui5qcGc"
                 alt="Lord Rama"
-                class="w-full h-full object-cover grayscale-30 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000 ease-in-out"
+                class="w-full h-full object-cover rounded-xl grayscale-30 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000 ease-in-out"
               />
               <div
                 class="absolute inset-0 bg-linear-to-t from-secondary/40 via-transparent to-transparent opacity-60"
               ></div>
             </div>
             <div
-              class="absolute -bottom-6 -left-6 bg-secondary text-white p-6 shadow-2xl hidden md:block animate-bounce-slow"
+              class="absolute -bottom-6 -left-6 bg-secondary rounded-xl text-white p-6 shadow-2xl hidden md:block animate-bounce-slow"
             >
               <p class="font-logo text-2xl italic tracking-widest text-primary">
-                Jai Sri Ram
+                The Ramayana
               </p>
             </div>
           </div>
@@ -168,10 +168,10 @@ onMounted(async () => {
       </div>
 
       <div class="text-center mb-20">
-        <h3 class="text-4xl font-logo text-secondary uppercase tracking-widest">
+        <h3 class="text-5xl font-serif text-[#3d0c02] italic font-bold tracking-tight"">
           The Six Chapters
         </h3>
-        <p class="text-accent font-serif italic mt-2">
+        <p class="text-[#3d0c02] font-serif italic tracking-[0.2em] text-lg">
           Explore the stages of the divine narrative
         </p>
       </div>

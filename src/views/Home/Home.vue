@@ -1,6 +1,7 @@
 <script setup>
-import AboutCharacter from '@/components/AboutCharacter.vue';
+import AboutCharacter from './AboutCharacter.vue';
 import FirstImpresion from './FirstImpresion.vue';
+import Lessons from './Lessons.vue';
 
   
 </script>
@@ -8,4 +9,5 @@ import FirstImpresion from './FirstImpresion.vue';
 <template>
   <FirstImpresion/>
   <AboutCharacter/>
+  <Lessons/>
 </template>

@@ -13,7 +13,7 @@ defineProps({
 
 <template>
   <div
-    class="group relative p-10 bg-[#fdf2e9] border border-[#c5a059]/30 cursor-pointer overflow-hidden transition-shadow duration-500 hover:shadow-[0_30px_70px_-15px_rgba(61,12,2,0.2)] flex flex-col items-center min-h-[420px]"
+    class="group relative p-10 bg-[#fdf2e9] rounded-xl border border-[#c5a059]/30 cursor-pointer overflow-hidden transition-shadow duration-500 hover:shadow-[0_30px_70px_-15px_rgba(61,12,2,0.2)] flex flex-col items-center min-h-[420px]"
   >
     <div class="absolute inset-0 opacity-[0.06] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/canvas-orange.png')]"></div>
 
