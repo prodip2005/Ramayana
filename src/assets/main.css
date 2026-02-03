@@ -1,35 +1,35 @@
-@import './base.css';
+@import "tailwindcss";
+@plugin "daisyui";
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  font-weight: normal;
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Inter:wght@400;500;600&display=swap');
+
+@theme {
+  --color-primary: #E67E22;    /* Deep Saffron for better visibility */
+  --color-secondary: #4A0404;  /* Rich Maroon for clear text */
+  --color-accent: #B8860B;     /* Dark Gold for highlights */
+  --font-logo: "Cinzel", serif;
 }
 
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-  padding: 3px;
+[data-theme="ramayan"] {
+  --color-primary: #E67E22;
+  --color-secondary: #4A0404;
+  --color-accent: #B8860B;
+  --bg-base-100: #FDFCFB;      /* Warm white background */
 }
 
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
+.nav-link-hover {
+  @apply relative py-1 transition-all duration-300 opacity-90 hover:opacity-100;
 }
 
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
+.nav-link-hover::after {
+  content: '';
+  @apply absolute bottom-[-2px] left-0 w-0 h-[2px] bg-primary transition-all duration-300;
+}
 
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
-  }
+.nav-link-hover:hover::after {
+  @apply w-full;
+}
+
+body {
+  @apply bg-base-100 text-secondary font-sans antialiased;
 }
