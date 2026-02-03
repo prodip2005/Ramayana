@@ -11,10 +11,10 @@ import { RouterView } from 'vue-router';
       <Navbar />
     </header>
 
-    <main class="flex-grow">
+    <main class="grow">
       <RouterView v-slot="{ Component }">
         <transition name="fade" mode="out-in">
-          <div :key="$route.path" class="max-w-7xl mx-auto p-4 md:p-8">
+          <div :key="$route.path" class=" p-4 md:p-8">
             <component :is="Component" />
           </div>
         </transition>
