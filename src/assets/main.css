@@ -1,28 +1,31 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 @plugin "daisyui";
 
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Inter:wght@400;500;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Playfair+Display:ital,wght@0,400;1,700&display=swap');
 
 
 @theme {
-  --color-primary: #E67E22;    /* Deep Saffron for better visibility */
-  --color-secondary: #4A0404;  /* Rich Maroon for clear text */
-  --color-accent: #B8860B;     /* Dark Gold for highlights */
-  --font-logo: "Cinzel", serif;
+  --color-primary: #e67e22; /* Deep Saffron for better visibility */
+  --color-secondary: #4a0404; /* Rich Maroon for clear text */
+  --color-accent: #b8860b; /* Dark Gold for highlights */
+  --font-logo: 'Cinzel', serif;
 }
 
-[data-theme="ramayan"] {
-  --color-primary: #E67E22;
-  --color-secondary: #4A0404;
-  --color-accent: #B8860B;
-  --bg-base-100: #FDFCFB;      /* Warm white background */
+[data-theme='ramayan'] {
+  --color-primary: #e67e22;
+  --color-secondary: #4a0404;
+  --color-accent: #b8860b;
+  --bg-base-100: #fdfcfb; /* Warm white background */
 }
-
 
 .font-serif {
   font-family: 'Playfair Display', serif;
+}
+
+.font-logo {
+  font-family: 'Cinzel', serif;
 }
 
 .nav-link-hover {

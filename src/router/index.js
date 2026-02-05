@@ -1,6 +1,7 @@
 import Root from '@/Layouts/Root/Root.vue'
-import Kandas from '@/Pages/Kandas.vue'
-import Shlokas from '@/Pages/Shlokas.vue'
+import KandaDetails from '@/Pages/KandaDetails.vue'
+import Ramayana from '@/Pages/Ramayana.vue'
+import SargaDetails from '@/Pages/SargaDetails.vue'
 import Home from '@/views/Home/Home.vue'
 import { createRouter, createWebHistory } from 'vue-router'
 
@@ -14,21 +15,33 @@ const router = createRouter({
         {
           path: '',
           name: 'home',
-          component:Home
+          component: Home
         },
         {
-          path: '/kandas',
-          name: 'kandas',
-          component:Kandas
+          path: '/ramayana',
+          name: 'ramayana',
+          component: Ramayana
         },
         {
-          path: '/shlokas',
-          name: 'shlokas',
-          component:Shlokas
-        }
+          path: '/kandas/:id',
+          name: 'kanda-details',
+          component: KandaDetails,
+          props: true
+        },
+        
+          {
+          path: '/sarga/:id',
+          name: 'sarga-details',
+          component: SargaDetails,
+          props: true
+        },
+        
+
+
+
       ]
     },
-    
+
   ],
 })
 

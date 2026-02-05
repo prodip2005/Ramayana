@@ -71,7 +71,7 @@ const toggleFlip = (id) => {
     </div>
 
     <div
-      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8 max-w-full mx-auto px-4 lg:px-12"
+      class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8 max-w-full mx-auto px-4 lg:px-12"
     >
       <div v-for="char in characters" :key="char.id" @click="toggleFlip(char.id)" class="hover-3d">
         <div class="card-container" >

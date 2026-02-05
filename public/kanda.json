@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "name": "Bala",
+    "image": "https://i.ibb.co.com/Sw04Rnh5/Bala-1.jpg",
+    "description": "The chapter of childhood and divine origins."
+  },
+  {
+    "id": 2,
+    "name": "Ayodhya",
+    "image": "https://i.ibb.co.com/ZwW6Xmm/Ayodhya-1.jpg",
+    "description": "The events in the city of Ayodhya and the exile of Rama."
+  },
+  {
+    "id": 3,
+    "name": "Aranya",
+    "image": "https://i.ibb.co.com/7NkDNz3V/Aronya-1.jpg",
+    "description": "The journey through the sacred forests."
+  },
+  {
+    "id": 4,
+    "name": "Kishkindha",
+    "image": "https://i.ibb.co.com/QjM1nfVD/Kishkindha-1.jpg",
+    "description": "The alliance with the Vanara kingdom."
+  },
+  {
+    "id": 5,
+    "name": "Sundara",
+    "image": "https://i.ibb.co.com/bgnSm76Y/Sundara-1.jpg",
+    "description": "The heroic journey of Hanuman to Lanka."
+  },
+  {
+    "id": 6,
+    "name": "Yuddha",
+    "image": "https://i.ibb.co.com/xS4k8Rdh/Yuddha-1.jpg",
+    "description": "The ultimate battle between righteousness and evil."
+  }
+]

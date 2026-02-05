@@ -1,13 +1,15 @@
 <script setup>
 import AboutCharacter from './AboutCharacter.vue';
-import FirstImpresion from './FirstImpresion.vue';
+import Banner from './Banner.vue';
+import FirstSection from './FirstSection.vue';
+import Lagecy from './Lagecy.vue';
 import Lessons from './Lessons.vue';
-
-  
 </script>
 
 <template>
-  <FirstImpresion/>
-  <AboutCharacter/>
-  <Lessons/>
+  <FirstSection />
+  <Lagecy />
+  <Banner />
+  <AboutCharacter />
+  <Lessons />
 </template>
