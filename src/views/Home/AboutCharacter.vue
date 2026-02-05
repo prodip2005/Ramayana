@@ -71,10 +71,15 @@ const toggleFlip = (id) => {
     </div>
 
     <div
-      class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8 max-w-full mx-auto px-4 lg:px-12"
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8 max-w-full mx-auto px-4 lg:px-12"
     >
-      <div v-for="char in characters" :key="char.id" @click="toggleFlip(char.id)" class="hover-3d">
-        <div class="card-container" >
+      <div
+        v-for="char in characters"
+        :key="char.id"
+        @click="toggleFlip(char.id)"
+        class="hover-3d"
+      >
+        <div class="card-container">
           <div class="card-flipper" :class="{ flipped: flippedCards[char.id] }">
             <div class="card-face card-front">
               <div
@@ -143,8 +148,6 @@ const toggleFlip = (id) => {
                   >
                     "{{ char.description }}"
                   </p>
-
-                  
                 </div>
               </div>
             </div>
@@ -165,7 +168,6 @@ const toggleFlip = (id) => {
 </template>
 
 <style scoped>
-
 .card-container {
   perspective: 1000px;
   cursor: pointer;
