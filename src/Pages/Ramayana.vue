@@ -7,7 +7,6 @@ const kandas = ref([]);
 const loading = ref(true);
 const error = ref(null);
 
-// Fetch function separated for retry button
 const fetchKandas = async () => {
   try {
     loading.value = true;

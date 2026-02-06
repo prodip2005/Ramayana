@@ -18,7 +18,7 @@ const fetchShlokaDetail = async () => {
     });
     shloka.value = response.data;
   } catch (err) {
-    error.value = "শ্লোকটির বিস্তারিত তথ্য পাওয়া যায়নি।";
+    error.value = "Empty Sholokas";
     console.error(err);
   } finally {
     loading.value = false;
@@ -124,11 +124,7 @@ onMounted(() => fetchShlokaDetail());
 </template>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&display=swap');
 
-.font-serif {
-  font-family: 'Crimson Pro', serif;
-}
 
 article {
   animation: fadeInVerse 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;

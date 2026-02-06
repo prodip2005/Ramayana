@@ -1,4 +1,7 @@
+import Login from '@/Authentication/Login.vue'
+import { requireAuth } from '@/Authentication/PrivateRoute'
 import Root from '@/Layouts/Root/Root.vue'
+import Bookmarks from '@/Pages/Bookmarks.vue'
 import KandaDetails from '@/Pages/KandaDetails.vue'
 import Ramayana from '@/Pages/Ramayana.vue'
 import SargaDetails from '@/Pages/SargaDetails.vue'
@@ -46,17 +49,26 @@ const router = createRouter({
 
         {
           path: '/shloka/:id',
-          name:'shloka',
+          name: 'shloka',
           component: ShlokaDetailsPage
         },
-
-
-
-
+        {
+          path: '/bookmarks',
+          name: 'bookmark',
+          beforeEnter: requireAuth,
+          component: Bookmarks
+        },
+        {
+          path: '/login',
+          name: 'login',
+          component: Login
+        }
       ]
     },
 
   ],
 })
+
+
 
 export default router

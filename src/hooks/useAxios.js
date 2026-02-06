@@ -10,7 +10,7 @@ const axiosInstance = axios.create({
 
 axiosInstance.interceptors.request.use(
     (config) => {
-        const token = '16|SkKVGIlI31ZNogFVq4KeznXxsGJhkADoPBmXxW4o83a79603';
+        const token = import.meta.env.VITE_RAMAYANA_API_TOKEN;
         if (token) {
             config.headers.Authorization = `Bearer ${token}`;
         }
