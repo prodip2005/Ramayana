@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-  <section class="pt-32 max-w-7xl mx-auto px-6 z-10">
+  <section class="pt-32 max-w-5xl mx-auto px-6 z-10">
     <div class="grid lg:grid-cols-12 gap-16 items-center mb-40 relative">
       <div class="lg:col-span-7 relative order-2 lg:order-1">
         <div class="relative z-10 space-y-8">
@@ -12,7 +12,7 @@
             ></div>
           </div>
           <h3
-            class="text-5xl md:text-7xl font-logo text-secondary leading-[1.1] tracking-tight"
+            class="text-4xl md:text-6xl font-logo text-secondary leading-[1.1] tracking-tight"
           >
             Legacy of the <br />
             <span class="text-primary italic">Seventh Avatar</span>
@@ -58,12 +58,12 @@
             class="absolute -inset-4 border border-accent/20 translate-x-4 translate-y-4 group-hover:translate-x-2 group-hover:translate-y-2 transition-transform duration-700"
           ></div>
           <div
-            class="relative aspect-4/5 overflow-hidden bg-white shadow-[20px_20px_60px_-15px_rgba(0,0,0,0.15)]"
+            class="relative aspect-4/5 overflow-hidden bg-white rounded-xl shadow-[20px_20px_60px_-15px_rgba(0,0,0,0.15)]"
           >
             <img
               src="https://imgs.search.brave.com/mtYH1JBc_UsB2ULPf1avlwEPjZZbFmZKWXVMJ2ZqQvQ/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzA5LzI2LzA0Lzc0/LzM2MF9GXzkyNjA0/NzQ1Nl8yWjJmNzJC/ODhkQk9GS0F1c3Ra/RThRSDZkblpGV3FC/Ui5qcGc"
               alt="Lord Rama"
-              class="w-full h-full object-cover rounded-xl grayscale-30 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000 ease-in-out"
+              class="w-full h-full object-cover rounded-xl hover:rounded-xl grayscale-30 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000 ease-in-out"
             />
           </div>
         </div>

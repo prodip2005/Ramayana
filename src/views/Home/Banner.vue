@@ -80,8 +80,9 @@ onUnmounted(stopTimer);
 </script>
 
 <template>
-  <section class="py-32 w-full mx-auto px-6 z-10 overflow-x-hidden">
-    <div class="text-center mb-16">
+  <section class="py-24 md:py-32 w-full z-10">
+    
+    <div class="max-w-7xl mx-auto px-6 text-center mb-16">
       <h3 class="text-5xl font-serif text-[#3d0c02] italic font-bold tracking-tight">
         The Six Chapters
       </h3>
@@ -100,26 +101,23 @@ onUnmounted(stopTimer);
 
     <div
       v-else
-      class="relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] h-[600px] md:h-[750px] bg-[#0a0a0a] overflow-hidden group/main z-10"
+      class="relative h-[600px] md:h-[750px] bg-[#0a0a0a] group/main z-10 
+             w-[100vw] ml-[50%] -translate-x-1/2 overflow-hidden"
     >
       <div
         v-for="(kanda, index) in combinedKandas"
         :key="kanda.id"
         class="absolute inset-0 w-full h-full transition-all duration-1000 ease-in-out"
-        :class="
-          index === activeIndex
-            ? 'opacity-100 z-10'
-            : 'opacity-0 z-0 pointer-events-none'
-        "
+        :class="index === activeIndex ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'"
       >
-        <div class="absolute inset-0">
+        <div class="absolute inset-0 w-full h-full">
           <img
             :src="kanda.image"
             class="w-full h-full object-cover transition-transform duration-[10000ms] ease-linear"
             :class="index === activeIndex ? 'scale-110' : 'scale-100'"
           />
-          <div class="absolute inset-0 bg-gradient-to-r from-[#0a0a0a] to-transparent"></div>
-          <div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent"></div>
+          <div class="absolute inset-0 bg-gradient-to-r from-black via-black/40 to-transparent"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
         </div>
 
         <div class="relative h-full max-w-7xl mx-auto px-10 flex flex-col justify-center">
@@ -131,6 +129,7 @@ onUnmounted(stopTimer);
               <span class="text-accent text-3xl font-serif italic">॥ ০{{ index + 1 }} ॥</span>
               <div class="h-px w-16 bg-accent/50"></div>
             </div>
+            
             <h4
               class="text-6xl md:text-8xl font-logo text-white leading-tight transform transition-all duration-1000 delay-500"
               :class="index === activeIndex ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'"
@@ -138,12 +137,14 @@ onUnmounted(stopTimer);
               {{ kanda.name }} <br />
               <span class="text-accent italic text-4xl md:text-6xl">Kanda</span>
             </h4>
+            
             <p
               class="text-xl text-white/80 font-serif italic leading-relaxed transform transition-all duration-1000 delay-700"
               :class="index === activeIndex ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'"
             >
               {{ kanda.description || '"Where there is Rama, there is Righteousness."' }}
             </p>
+            
             <div
               class="pt-6 transform transition-all duration-1000 delay-1000"
               :class="index === activeIndex ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'"
@@ -161,21 +162,12 @@ onUnmounted(stopTimer);
         </div>
       </div>
 
-      <button
-        @click="prevSlide(); startTimer();"
-        class="absolute left-12 top-1/2 -translate-y-1/2 z-30 p-4 border border-white/20 rounded-full text-white hover:bg-accent hover:text-[#3d0c02] transition-all opacity-0 group-hover/main:opacity-100"
-      >
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-          <polyline points="15 18 9 12 15 6"></polyline>
-        </svg>
+      <button @click="prevSlide(); startTimer();" class="absolute left-12 top-1/2 -translate-y-1/2 z-30 p-4 border border-white/20 rounded-full text-white hover:bg-accent hover:text-[#3d0c02] transition-all opacity-0 group-hover/main:opacity-100">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
       </button>
-      <button
-        @click="nextSlide(); startTimer();"
-        class="absolute right-12 top-1/2 -translate-y-1/2 z-30 p-4 border border-white/20 rounded-full text-white hover:bg-accent hover:text-[#3d0c02] transition-all opacity-0 group-hover/main:opacity-100"
-      >
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-          <polyline points="9 18 15 12 9 6"></polyline>
-        </svg>
+      
+      <button @click="nextSlide(); startTimer();" class="absolute right-12 top-1/2 -translate-y-1/2 z-30 p-4 border border-white/20 rounded-full text-white hover:bg-accent hover:text-[#3d0c02] transition-all opacity-0 group-hover/main:opacity-100">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
       </button>
 
       <div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-30 flex gap-4">
