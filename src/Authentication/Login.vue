@@ -89,7 +89,7 @@ const handleLogin = async () => {
           </div>
 
           <div class="relative z-10 p-2 border-2 border-primary/30 rounded-[3rem] bg-white/5 backdrop-blur-sm shadow-2xl">
-            <img src="/Lord-Ram-SVG.svg" alt="Lord Rama" class="w-full h-auto object-contain p-4 drop-shadow-[0_0_30px_rgba(254,170,4,0.3)]" />
+            <img src="/favicon.svg" alt="Lord Rama" class="w-full h-auto object-contain p-4 drop-shadow-[0_0_30px_rgba(254,170,4,0.3)]" />
           </div>
 
           <div class="mt-8 text-center space-y-2 relative z-10">
