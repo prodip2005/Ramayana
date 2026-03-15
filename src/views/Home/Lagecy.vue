@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-  <section class="pt-32 max-w-5xl mx-auto px-6 z-10">
+  <section class="pt-32 max-w-425 mx-auto px-6 z-10">
     <div class="grid lg:grid-cols-12 gap-16 items-center mb-40 relative">
       <div class="lg:col-span-7 relative order-2 lg:order-1">
         <div class="relative z-10 space-y-8">
@@ -12,7 +12,7 @@
             ></div>
           </div>
           <h3
-            class="text-4xl md:text-6xl font-logo text-secondary leading-[1.1] tracking-tight"
+            class="text-4xl md:text-7xl font-logo text-secondary leading-[1.1] tracking-tight"
           >
             Legacy of the <br />
             <span class="text-primary italic">Seventh Avatar</span>
@@ -54,9 +54,6 @@
       </div>
       <div class="lg:col-span-5 relative order-1 lg:order-2">
         <div class="relative group">
-          <div
-            class="absolute -inset-4 border border-accent/20 translate-x-4 translate-y-4 group-hover:translate-x-2 group-hover:translate-y-2 transition-transform duration-700"
-          ></div>
           <div
             class="relative aspect-4/5 overflow-hidden bg-white rounded-xl shadow-[20px_20px_60px_-15px_rgba(0,0,0,0.15)]"
           >

@@ -40,6 +40,12 @@ const handleLogout = async () => {
           
           <li v-if="user"><RouterLink to="/bookmarks" active-class="nav-active-mobile" class="py-3 text-lg">Bookmarks</RouterLink></li>
           
+          <li v-if="!user" class="mt-2 border-t border-accent/10 pt-4">
+            <RouterLink to="/login" class="btn bg-primary hover:bg-accent text-secondary border-none w-full justify-center shadow-lg uppercase tracking-widest font-bold">
+              Login
+            </RouterLink>
+          </li>
+          
           <li v-if="user" class="border-t border-accent/10 pt-4 mt-2">
             <div class="flex items-center gap-3 p-2">
               <img :src="user.photoURL" class="w-10 h-10 rounded-full border border-primary/50" />

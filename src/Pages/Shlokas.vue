@@ -111,46 +111,50 @@ onMounted(() => fetchAllShlokas());
         </router-link>
       </div>
 
-      <nav v-if="totalPages > 1 && !loading" class="mt-20">
+      <nav v-if="totalPages > 1 && !loading" class="mt-32 pb-20">
         <div class="flex flex-col items-center gap-6">
-          <div class="flex flex-wrap justify-center items-center gap-1.5 md:gap-2">
-            
-            <button 
-              @click="changePage(currentPage - 1)" 
+          
+          <div class="text-[9px] font-logo text-primary/40 tracking-[0.4em] uppercase font-bold">
+            Page {{ currentPage }} of {{ totalPages }}
+          </div>
+
+          <div class="flex items-center gap-3 md:gap-5">
+            <button
+              @click="changePage(currentPage - 1)"
               :disabled="currentPage === 1"
-              class="px-4 py-2 rounded-xl bg-[#f9e6c1] border border-primary/20 text-secondary disabled:opacity-20 hover:bg-primary hover:text-white transition-all font-logo text-[10px] tracking-widest"
+              class="group flex items-center gap-2 px-5 py-2.5 rounded-xl border border-primary/20 bg-[#f9e6c1] text-secondary/70 shadow-sm transition-all hover:bg-primary hover:text-secondary disabled:opacity-20 active:scale-95"
             >
-              PREV
+              <span class="text-xs group-hover:-translate-x-1 transition-transform">←</span>
+              <span class="font-logo text-[9px] font-black tracking-[0.2em] uppercase">Prev</span>
             </button>
-            
-            <div class="flex flex-wrap justify-center gap-1.5 md:gap-2">
-              <button 
-                v-for="page in visiblePages" 
-                :key="page" 
+
+            <div class="flex items-center gap-2 px-3 py-2 bg-primary/5 rounded-2xl border border-primary/10 backdrop-blur-sm">
+              <button
+                v-for="page in visiblePages"
+                :key="page"
                 @click="changePage(page)"
                 :class="[
-                  'w-9 h-9 md:w-11 md:h-11 rounded-xl font-logo text-xs transition-all flex items-center justify-center border-2', 
-                  currentPage === page 
-                    ? 'bg-primary text-white border-primary shadow-md scale-110 z-10' 
-                    : 'bg-[#f9e6c1] text-secondary/60 border-primary/5 hover:border-primary hover:text-primary'
+                  'w-9 h-9 md:w-11 md:h-11 rounded-xl font-logo text-[11px] md:text-xs transition-all flex items-center justify-center font-bold shadow-sm',
+                  currentPage === page
+                    ? 'bg-primary text-secondary border-primary shadow-md scale-110 z-10'
+                    : 'bg-[#f9e6c1] text-secondary/60 border-primary/10 hover:border-primary/40 hover:text-primary',
                 ]"
               >
                 {{ page }}
               </button>
             </div>
 
-            <button 
-              @click="changePage(currentPage + 1)" 
+            <button
+              @click="changePage(currentPage + 1)"
               :disabled="currentPage === totalPages"
-              class="px-4 py-2 rounded-xl bg-[#f9e6c1] border border-primary/20 text-secondary disabled:opacity-20 hover:bg-primary hover:text-white transition-all font-logo text-[10px] tracking-widest"
+              class="group flex items-center gap-2 px-5 py-2.5 rounded-xl border border-primary/20 bg-[#f9e6c1] text-secondary/70 shadow-sm transition-all hover:bg-primary hover:text-secondary disabled:opacity-20 active:scale-95"
             >
-              NEXT
+              <span class="font-logo text-[9px] font-black tracking-[0.2em] uppercase">Next</span>
+              <span class="text-xs group-hover:translate-x-1 transition-transform">→</span>
             </button>
           </div>
 
-          <div class="font-serif italic text-secondary/40 text-[10px] tracking-[0.2em] uppercase">
-            Viewing Page {{ currentPage }} of {{ totalPages }}
-          </div>
+          <div class="w-24 h-[1.5px] bg-gradient-to-r from-transparent via-primary/40 to-transparent"></div>
         </div>
       </nav>
     </main>

@@ -129,7 +129,7 @@ onMounted(() => fetchKandaDetails());
       </div>
     </header>
 
-    <main class="max-w-7xl mx-auto">
+    <main class="max-w-[1600px] mx-auto">
       <div
         v-if="loading"
         class="flex flex-col items-center justify-center py-20"
@@ -141,7 +141,7 @@ onMounted(() => fetchKandaDetails());
 
       <div
         v-else-if="sargas.length"
-        class="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-10"
+        class="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-10"
       >
         <router-link
           v-for="sarga in sargas"
@@ -209,45 +209,54 @@ onMounted(() => fetchKandaDetails());
       </div>
     </main>
 
-    <nav v-if="totalPages > 1 && !loading" class="max-w-7xl mx-auto mt-20">
-      <div class="flex flex-wrap justify-center items-center gap-2 md:gap-3">
-        <button
-          @click="changePage(currentPage - 1)"
-          :disabled="currentPage === 1"
-          class="px-4 py-2 rounded-lg font-logo text-[10px] tracking-widest border border-primary/30 text-secondary hover:bg-primary hover:text-white disabled:opacity-20 transition-all bg-[#fdf2da] shadow-sm"
-        >
-          PREV
-        </button>
+  <nav v-if="totalPages > 1 && !loading" class="max-w-7xl mx-auto mt-32 pb-20 px-4">
+      <div class="flex flex-col items-center gap-6">
+        
+        <div class="text-[9px] font-logo text-primary/40 tracking-[0.4em] uppercase font-bold">
+          Page {{ currentPage }} of {{ totalPages }}
+        </div>
 
-        <button
-          v-for="page in pageNumbers"
-          :key="page"
-          @click="changePage(page)"
-          :class="[
-            'w-8 h-8 md:w-11 md:h-11 rounded-lg font-logo text-xs md:text-sm transition-all border flex items-center justify-center shadow-sm',
-            currentPage === page
-              ? 'bg-primary text-white border-primary shadow-lg scale-110 z-10'
-              : 'bg-[#fdf2da] text-secondary border-primary/20 hover:border-primary hover:text-primary',
-          ]"
-        >
-          {{ page }}
-        </button>
+        <div class="flex items-center gap-3 md:gap-5">
+          <button
+            @click="changePage(currentPage - 1)"
+            :disabled="currentPage === 1"
+            class="group flex items-center gap-2 px-5 py-2.5 rounded-xl border border-primary/20 bg-[#fdf2da] text-secondary/70 shadow-sm transition-all hover:bg-primary hover:text-secondary disabled:opacity-20 active:scale-95"
+          >
+            <span class="text-xs group-hover:-translate-x-1 transition-transform">←</span>
+            <span class="font-logo text-[9px] font-black tracking-[0.2em] uppercase">Prev</span>
+          </button>
 
-        <button
-          @click="changePage(currentPage + 1)"
-          :disabled="currentPage === totalPages"
-          class="px-4 py-2 rounded-lg font-logo text-[10px] tracking-widest border border-primary/30 text-secondary hover:bg-primary hover:text-white disabled:opacity-20 transition-all bg-[#fdf2da] shadow-sm"
-        >
-          NEXT
-        </button>
-      </div>
+          <div class="flex items-center gap-2 px-3 py-2 bg-primary/5 rounded-2xl border border-primary/10 backdrop-blur-sm">
+            <button
+              v-for="page in pageNumbers"
+              :key="page"
+              @click="changePage(page)"
+              :class="[
+                'w-9 h-9 md:w-11 md:h-11 rounded-xl font-logo text-[11px] md:text-xs transition-all flex items-center justify-center font-bold shadow-sm',
+                currentPage === page
+                  ? 'bg-primary text-secondary border-primary shadow-md scale-110 z-10'
+                  : 'bg-[#fdf2da] text-secondary/60 border-primary/10 hover:border-primary/40 hover:text-primary',
+              ]"
+            >
+              {{ page }}
+            </button>
+          </div>
 
-      <div
-        v-if="totalPages > 10"
-        class="text-center mt-4 font-serif italic text-secondary/40 text-[10px] uppercase tracking-widest"
-      >
-        Page {{ currentPage }} of {{ totalPages }}
+          <button
+            @click="changePage(currentPage + 1)"
+            :disabled="currentPage === totalPages"
+            class="group flex items-center gap-2 px-5 py-2.5 rounded-xl border border-primary/20 bg-[#fdf2da] text-secondary/70 shadow-sm transition-all hover:bg-primary hover:text-secondary disabled:opacity-20 active:scale-95"
+          >
+            <span class="font-logo text-[9px] font-black tracking-[0.2em] uppercase">Next</span>
+            <span class="text-xs group-hover:translate-x-1 transition-transform">→</span>
+          </button>
+        </div>
+
+        <div class="w-24 h-[1.5px] bg-gradient-to-r from-transparent via-primary/40 to-transparent"></div>
       </div>
     </nav>
+
+
+    
   </div>
 </template>
