@@ -86,7 +86,7 @@ onMounted(fetchKandas);
         class="group relative"
       >
         <div
-          class="relative h-full bg-[#fdf2da] p-5 md:p-10 flex flex-col justify-between min-h-[350px] md:min-h-[480px] transition-all duration-500 border-2 border-accent/20 hover:border-primary/40 shadow-[0_10px_20px_-10px_rgba(61,12,2,0.1)] overflow-hidden"
+          class="relative h-full bg-[#fdf2da] p-4 md:p-10 flex flex-col justify-between min-h-[190px] md:min-h-[480px] transition-all duration-500 border-2 border-accent/20 hover:border-primary/40 shadow-[0_10px_20px_-10px_rgba(61,12,2,0.1)] overflow-hidden"
         >
           <div
             class="absolute inset-2 md:inset-4 border border-accent/10 pointer-events-none group-hover:border-primary/10 transition-colors"
@@ -106,7 +106,7 @@ onMounted(fetchKandas);
           </div>
 
           <div class="relative z-10">
-            <div class="flex items-center gap-2 md:gap-3 mb-6 md:mb-10">
+            <div class="flex items-center gap-2 md:gap-3 mb-2 md:mb-10">
               <span
                 class="text-primary font-bold tracking-[0.1em] md:tracking-[0.3em] text-[8px] md:text-[10px] uppercase"
               >
@@ -116,18 +116,18 @@ onMounted(fetchKandas);
             </div>
 
             <h2
-              class="text-xl md:text-4xl font-logo text-secondary mb-3 md:mb-6 leading-tight group-hover:text-primary transition-colors duration-500"
+              class="text-base md:text-4xl font-logo text-secondary mb-2 md:mb-6 leading-tight group-hover:text-primary transition-colors duration-500"
             >
               {{ kanda.name }}
               <span
-                class="block text-[8px] md:text-xs tracking-[0.2em] md:tracking-[0.5em] uppercase text-accent mt-1 md:mt-3 font-bold group-hover:text-secondary"
+                class="block text-[7px] md:text-xs tracking-[0.2em] md:tracking-[0.5em] uppercase text-accent mt-0.5 md:mt-3 font-bold group-hover:text-secondary"
               >
                 Kanda
               </span>
             </h2>
 
             <p
-              class="text-secondary/70 font-serif italic leading-snug md:leading-relaxed text-xs md:text-lg line-clamp-3 md:line-clamp-4"
+              class="text-secondary/70 font-serif italic leading-snug md:leading-relaxed text-[10px] md:text-lg line-clamp-1 md:line-clamp-4"
             >
               {{
                 kanda.description ||
@@ -138,12 +138,12 @@ onMounted(fetchKandas);
 
           <RouterLink
             :to="`/kandas/${kanda.id}`"
-            class="relative z-10 mt-6 md:mt-12"
+            class="relative z-10 mt-3 md:mt-12"
           >
             <button
-              class="group w-full relative rounded-lg md:rounded-xl px-4 md:px-12 py-3 md:py-4 bg-primary text-white font-bold tracking-[0.1em] md:tracking-[0.2em] overflow-hidden transition-all shadow-lg md:shadow-2xl"
+              class="group w-full relative rounded-lg md:rounded-xl px-2 md:px-12 py-2 md:py-4 bg-primary text-white font-bold tracking-[0.1em] md:tracking-[0.2em] overflow-hidden transition-all shadow-md md:shadow-2xl flex items-center justify-center md:block"
             >
-              <span class="relative z-10 uppercase text-[9px] md:text-xs"
+              <span class="relative z-10 uppercase text-[8px] md:text-xs leading-none"
                 >Read Kanda</span
               >
               <div
