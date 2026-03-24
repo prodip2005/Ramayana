@@ -13,19 +13,19 @@ const fetchAllShlokas = async (page = 1) => {
   try {
     loading.value = true;
     const response = await axiosInstance.get('/shlokas', {
-      params: { 
-        paginate: perPage, 
+      params: {
+        paginate: perPage,
         page: page,
         search: searchQuery.value,
-        with_kanda: 1, 
-        with_sarga: 1  
-      }
+        with_kanda: 1,
+        with_sarga: 1,
+      },
     });
     shlokas.value = response.data.data;
     currentPage.value = response.data.current_page;
     totalPages.value = response.data.last_page;
   } catch (err) {
-    console.error("Error fetching shlokas:", err);
+    console.error('Error fetching shlokas:', err);
   } finally {
     loading.value = false;
   }
@@ -34,8 +34,8 @@ const fetchAllShlokas = async (page = 1) => {
 // ১ থেকে ১০ বা তার বেশি পেজ সিরিয়ালি দেখানোর লজিক
 const visiblePages = computed(() => {
   const pages = [];
-  const count = 10; 
-  
+  const count = 10;
+
   let start = Math.max(1, currentPage.value - Math.floor(count / 2));
   let end = start + count - 1;
 
@@ -61,51 +61,73 @@ onMounted(() => fetchAllShlokas());
 </script>
 
 <template>
-  <div class="min-h-screen  py-12 md:py-20 px-4">
+  <div class="min-h-screen py-12 md:py-20 px-4">
     <main class="max-w-4xl mx-auto">
-      
       <div class="flex justify-start mb-10">
-        <button 
-          @click="$router.back()" 
+        <button
+          @click="$router.back()"
           class="group flex items-center gap-3 text-secondary/70 hover:text-primary transition-all"
         >
-          <span class="w-10 h-10 flex items-center justify-center rounded-full border border-primary/20 bg-[#f9e6c1] group-hover:bg-primary group-hover:text-white transition-all shadow-sm">
+          <span
+            class="w-10 h-10 flex items-center justify-center rounded-full border border-primary/20 bg-[#f9e6c1] group-hover:bg-primary group-hover:text-white transition-all shadow-sm"
+          >
             ←
           </span>
-          <span class="font-logo text-[10px] tracking-[0.2em] uppercase font-bold">Back</span>
+          <span
+            class="font-logo text-[10px] tracking-[0.2em] uppercase font-bold"
+            >Back</span
+          >
         </button>
       </div>
 
-      <div v-if="loading" class="flex flex-col items-center justify-center py-40">
-        <div class="w-10 h-10 border-4 border-t-primary border-primary/10 rounded-full animate-spin"></div>
-        <p class="font-logo text-[9px] mt-4 tracking-widest text-primary/60">LOADING SHLOKAS...</p>
+      <div
+        v-if="loading"
+        class="flex flex-col items-center justify-center py-40"
+      >
+        <div
+          class="w-10 h-10 border-4 border-t-primary border-primary/10 rounded-full animate-spin"
+        ></div>
+        <p class="font-logo text-[9px] mt-4 tracking-widest text-primary/60">
+          LOADING SHLOKAS...
+        </p>
       </div>
 
       <div v-else class="space-y-6">
-        <router-link 
-          v-for="shloka in shlokas" 
-          :key="shloka.id" 
+        <router-link
+          v-for="shloka in shlokas"
+          :key="shloka.id"
           :to="`/shloka/${shloka.id}`"
           class="block bg-[#f9e6c1] p-6 md:p-8 border border-primary/5 rounded-[2rem] hover:border-primary/20 hover:shadow-lg transition-all duration-300 group relative overflow-hidden"
         >
           <div class="flex gap-2 mb-4">
-            <span class="text-[8px] font-logo px-2 py-0.5 bg-secondary/10 text-secondary rounded uppercase tracking-wider">
+            <span
+              class="text-[8px] font-logo px-2 py-0.5 bg-secondary/10 text-secondary rounded uppercase tracking-wider"
+            >
               KANDA {{ shloka.kanda?.id || '?' }}
             </span>
-            <span class="text-[8px] font-logo px-2 py-0.5 bg-primary/10 text-primary rounded uppercase tracking-wider">
+            <span
+              class="text-[8px] font-logo px-2 py-0.5 bg-primary/10 text-primary rounded uppercase tracking-wider"
+            >
               SARGA {{ shloka.sarga?.id || '?' }}
             </span>
           </div>
 
-          <p class="text-lg md:text-xl font-serif text-secondary leading-relaxed line-clamp-2 italic pr-6">
+          <p
+            class="text-lg md:text-xl font-serif text-secondary leading-relaxed line-clamp-2 italic pr-6"
+          >
             {{ shloka.sanskrit }}
           </p>
 
-          <p v-if="shloka.tat" class="mt-3 text-secondary/40 font-serif text-xs line-clamp-1 italic">
+          <p
+            v-if="shloka.tat"
+            class="mt-3 text-secondary/40 font-serif text-xs line-clamp-1 italic"
+          >
             {{ shloka.tat }}
           </p>
 
-          <div class="absolute right-6 top-1/2 -translate-y-1/2 text-primary/20 group-hover:text-primary group-hover:translate-x-1 transition-all">
+          <div
+            class="absolute right-6 top-1/2 -translate-y-1/2 text-primary/20 group-hover:text-primary group-hover:translate-x-1 transition-all"
+          >
             →
           </div>
         </router-link>
@@ -113,22 +135,33 @@ onMounted(() => fetchAllShlokas());
 
       <nav v-if="totalPages > 1 && !loading" class="mt-32 pb-20">
         <div class="flex flex-col items-center gap-6">
-          
-          <div class="text-[9px] font-logo text-primary/40 tracking-[0.4em] uppercase font-bold">
+          <div
+            class="text-[9px] font-logo text-primary/40 tracking-[0.4em] uppercase font-bold"
+          >
             Page {{ currentPage }} of {{ totalPages }}
           </div>
 
-          <div class="flex items-center gap-3 md:gap-5">
+          <div
+            class="flex flex-wrap justify-center items-center gap-3 md:gap-5"
+          >
             <button
               @click="changePage(currentPage - 1)"
               :disabled="currentPage === 1"
               class="group flex items-center gap-2 px-5 py-2.5 rounded-xl border border-primary/20 bg-[#f9e6c1] text-secondary/70 shadow-sm transition-all hover:bg-primary hover:text-secondary disabled:opacity-20 active:scale-95"
             >
-              <span class="text-xs group-hover:-translate-x-1 transition-transform">←</span>
-              <span class="font-logo text-[9px] font-black tracking-[0.2em] uppercase">Prev</span>
+              <span
+                class="text-xs group-hover:-translate-x-1 transition-transform"
+                >←</span
+              >
+              <span
+                class="font-logo text-[9px] font-black tracking-[0.2em] uppercase"
+                >Prev</span
+              >
             </button>
 
-            <div class="flex items-center gap-2 px-3 py-2 bg-primary/5 rounded-2xl border border-primary/10 backdrop-blur-sm">
+            <div
+              class="flex flex-wrap justify-center items-center gap-2 px-3 py-2 bg-primary/5 rounded-2xl border border-primary/10 backdrop-blur-sm"
+            >
               <button
                 v-for="page in visiblePages"
                 :key="page"
@@ -149,12 +182,20 @@ onMounted(() => fetchAllShlokas());
               :disabled="currentPage === totalPages"
               class="group flex items-center gap-2 px-5 py-2.5 rounded-xl border border-primary/20 bg-[#f9e6c1] text-secondary/70 shadow-sm transition-all hover:bg-primary hover:text-secondary disabled:opacity-20 active:scale-95"
             >
-              <span class="font-logo text-[9px] font-black tracking-[0.2em] uppercase">Next</span>
-              <span class="text-xs group-hover:translate-x-1 transition-transform">→</span>
+              <span
+                class="font-logo text-[9px] font-black tracking-[0.2em] uppercase"
+                >Next</span
+              >
+              <span
+                class="text-xs group-hover:translate-x-1 transition-transform"
+                >→</span
+              >
             </button>
           </div>
 
-          <div class="w-24 h-[1.5px] bg-gradient-to-r from-transparent via-primary/40 to-transparent"></div>
+          <div
+            class="w-24 h-[1.5px] bg-gradient-to-r from-transparent via-primary/40 to-transparent"
+          ></div>
         </div>
       </nav>
     </main>

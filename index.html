@@ -1,17 +1,23 @@
-<!DOCTYPE html>
-<html lang="en" data-theme="ramayan"> 
-<head>
-    <meta charset="UTF-8">
-    
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<!doctype html>
+<html lang="en" data-theme="ramayan">
+  <head>
+    <meta charset="UTF-8" />
 
-    <link rel="apple-touch-icon" href="/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-site-verification" content="Dqf4B3aczMIAryl8oa9OmtSPQwj0hevnXy6JhWPzJYA" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <link rel="apple-touch-icon" href="/favicon.ico" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="google-site-verification"
+      content="Dqf4B3aczMIAryl8oa9OmtSPQwj0hevnXy6JhWPzJYA"
+    />
     <title>Valmiki Ramayana | The Eternal Epic - Prodip Hore</title>
 
     <style>
@@ -22,18 +28,32 @@
       .goog-te-balloon-frame,
       div#goog-gt-,
       .VIpgJd-ZVi9od-aZ2wEe-wOHMyf,
-      .VIpgJd-ZVi9od-aZ2wEe { display: none !important; }
+      .VIpgJd-ZVi9od-aZ2wEe {
+        display: none !important;
+      }
 
       /* Prevent Google from pushing the page down */
-      body { top: 0 !important; position: static !important; }
-      html body { margin-top: 0 !important; }
+      body {
+        top: 0 !important;
+        position: static !important;
+      }
+      html body {
+        margin-top: 0 !important;
+      }
 
       /* Hide branding & gadget text */
       .goog-logo-link,
       .goog-te-gadget span,
-      .goog-te-gadget > span { display: none !important; }
-      .goog-te-gadget { font-size: 0 !important; line-height: 0 !important; }
-      #google_translate_element { display: none; }
+      .goog-te-gadget > span {
+        display: none !important;
+      }
+      .goog-te-gadget {
+        font-size: 0 !important;
+        line-height: 0 !important;
+      }
+      #google_translate_element {
+        display: none;
+      }
 
       /* Floating translate button */
       #gt-toggle-btn {
@@ -52,13 +72,18 @@
         text-transform: uppercase;
         font-weight: 700;
         cursor: pointer;
-        box-shadow: 0 8px 24px rgba(61,12,2,0.3);
+        box-shadow: 0 8px 24px rgba(61, 12, 2, 0.3);
         display: flex;
         align-items: center;
         gap: 8px;
-        transition: background 0.3s, transform 0.2s;
+        transition:
+          background 0.3s,
+          transform 0.2s;
       }
-      #gt-toggle-btn:hover { background: #3d0c02; transform: translateY(-2px); }
+      #gt-toggle-btn:hover {
+        background: #3d0c02;
+        transform: translateY(-2px);
+      }
 
       /* Dropdown panel */
       #gt-panel {
@@ -67,23 +92,25 @@
         right: 24px;
         z-index: 9998;
         background: #fdf2da;
-        border: 1px solid rgba(181,69,27,0.25);
+        border: 1px solid rgba(181, 69, 27, 0.25);
         border-radius: 14px;
         padding: 16px;
-        box-shadow: 0 12px 40px rgba(61,12,2,0.2);
+        box-shadow: 0 12px 40px rgba(61, 12, 2, 0.2);
         display: none;
         flex-direction: column;
         gap: 10px;
         width: 240px;
       }
-      #gt-panel.open { display: flex; }
+      #gt-panel.open {
+        display: flex;
+      }
 
       #gt-panel-label {
         font-family: 'Cinzel', serif;
         font-size: 9px;
         letter-spacing: 0.35em;
         text-transform: uppercase;
-        color: rgba(61,12,2,0.45);
+        color: rgba(61, 12, 2, 0.45);
         font-weight: 700;
         text-align: center;
       }
@@ -92,7 +119,7 @@
         width: 100%;
         box-sizing: border-box;
         background: #fff8ed;
-        border: 1px solid rgba(181,69,27,0.3);
+        border: 1px solid rgba(181, 69, 27, 0.3);
         border-radius: 8px;
         padding: 8px 10px;
         font-family: 'Georgia', serif;
@@ -100,8 +127,13 @@
         color: #3d0c02;
         outline: none;
       }
-      #gt-search:focus { border-color: #b5451b; }
-      #gt-search::placeholder { color: rgba(61,12,2,0.35); font-style: italic; }
+      #gt-search:focus {
+        border-color: #b5451b;
+      }
+      #gt-search::placeholder {
+        color: rgba(61, 12, 2, 0.35);
+        font-style: italic;
+      }
 
       #gt-lang-list {
         list-style: none;
@@ -110,7 +142,7 @@
         max-height: 220px;
         overflow-y: auto;
         border-radius: 8px;
-        border: 1px solid rgba(181,69,27,0.15);
+        border: 1px solid rgba(181, 69, 27, 0.15);
         background: #fff8ed;
       }
       #gt-lang-list li {
@@ -119,49 +151,99 @@
         font-size: 13px;
         color: #3d0c02;
         cursor: pointer;
-        border-bottom: 1px solid rgba(181,69,27,0.08);
+        border-bottom: 1px solid rgba(181, 69, 27, 0.08);
         transition: background 0.15s;
         display: flex;
         align-items: center;
         justify-content: space-between;
       }
-      #gt-lang-list li:last-child { border-bottom: none; }
-      #gt-lang-list li:hover { background: rgba(181,69,27,0.1); }
-      #gt-lang-list li.gt-active { background: #b5451b; color: #f7eedc; font-weight: 600; }
-      #gt-lang-list li .lang-native { font-size: 11px; opacity: 0.6; }
-      #gt-lang-list li.gt-active .lang-native { opacity: 0.85; }
+      #gt-lang-list li:last-child {
+        border-bottom: none;
+      }
+      #gt-lang-list li:hover {
+        background: rgba(181, 69, 27, 0.1);
+      }
+      #gt-lang-list li.gt-active {
+        background: #b5451b;
+        color: #f7eedc;
+        font-weight: 600;
+      }
+      #gt-lang-list li .lang-native {
+        font-size: 11px;
+        opacity: 0.6;
+      }
+      #gt-lang-list li.gt-active .lang-native {
+        opacity: 0.85;
+      }
 
-      #gt-lang-list::-webkit-scrollbar { width: 4px; }
-      #gt-lang-list::-webkit-scrollbar-track { background: transparent; }
-      #gt-lang-list::-webkit-scrollbar-thumb { background: rgba(181,69,27,0.3); border-radius: 4px; }
+      #gt-lang-list::-webkit-scrollbar {
+        width: 4px;
+      }
+      #gt-lang-list::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      #gt-lang-list::-webkit-scrollbar-thumb {
+        background: rgba(181, 69, 27, 0.3);
+        border-radius: 4px;
+      }
 
       #gt-lang-list li.gt-default {
-        background: rgba(181,69,27,0.05);
-        border-bottom: 2px solid rgba(181,69,27,0.15) !important;
+        background: rgba(181, 69, 27, 0.05);
+        border-bottom: 2px solid rgba(181, 69, 27, 0.15) !important;
         font-weight: 600;
         color: #b5451b;
       }
-      #gt-lang-list li.gt-default:hover { background: rgba(181,69,27,0.12); }
-      #gt-lang-list li.gt-default .lang-native { color: #b5451b; opacity: 0.7; }
+      #gt-lang-list li.gt-default:hover {
+        background: rgba(181, 69, 27, 0.12);
+      }
+      #gt-lang-list li.gt-default .lang-native {
+        color: #b5451b;
+        opacity: 0.7;
+      }
 
       #gt-no-result {
         padding: 12px;
         text-align: center;
         font-family: 'Georgia', serif;
         font-size: 12px;
-        color: rgba(61,12,2,0.4);
+        color: rgba(61, 12, 2, 0.4);
         font-style: italic;
       }
+
+      /* Responsive rules for mobile devices */
+      @media screen and (max-width: 640px) {
+        #gt-toggle-btn {
+          bottom: 12px;
+          right: 12px;
+          padding: 8px 14px;
+          font-size: 9px;
+          box-sizing: border-box;
+          max-width: calc(100vw - 24px);
+        }
+        #gt-panel {
+          bottom: 60px;
+          right: 12px;
+          width: 240px;
+          max-width: calc(100vw - 24px);
+          padding: 12px;
+          box-sizing: border-box;
+        }
+      }
     </style>
-</head>
-<body class="bg-base-100 transition-colors duration-300">
+  </head>
+  <body class="bg-base-100 transition-colors duration-300">
     <div id="app"></div>
 
     <!-- Hidden Google Translate element (needed for the API) -->
     <div id="google_translate_element"></div>
 
     <!-- Floating Translate Button -->
-    <button id="gt-toggle-btn" onclick="gtTogglePanel()" translate="no" class="notranslate">
+    <button
+      id="gt-toggle-btn"
+      onclick="gtTogglePanel()"
+      translate="no"
+      class="notranslate"
+    >
       <i class="fa-solid fa-language"></i>
       Translate
     </button>
@@ -183,77 +265,77 @@
     <script>
       // Full language list — Bengali, English, Hindi, Sanskrit first
       var GT_LANGS = [
-        { code: 'bn', name: 'Bengali',              native: 'বাংলা' },
-        { code: 'en', name: 'English',              native: 'English' },
-        { code: 'hi', name: 'Hindi',                native: 'हिन्दी' },
-        { code: 'sa', name: 'Sanskrit',             native: 'संस्कृत' },
-        { code: 'af', name: 'Afrikaans',            native: 'Afrikaans' },
-        { code: 'sq', name: 'Albanian',             native: 'Shqip' },
-        { code: 'ar', name: 'Arabic',               native: 'العربية' },
-        { code: 'hy', name: 'Armenian',             native: 'Հայερեն' },
-        { code: 'az', name: 'Azerbaijani',          native: 'Azərbaycan' },
-        { code: 'eu', name: 'Basque',               native: 'Euskara' },
-        { code: 'be', name: 'Belarusian',           native: 'Беларуская' },
-        { code: 'bs', name: 'Bosnian',              native: 'Bosanski' },
-        { code: 'bg', name: 'Bulgarian',            native: 'Български' },
-        { code: 'ca', name: 'Catalan',              native: 'Català' },
+        { code: 'bn', name: 'Bengali', native: 'বাংলা' },
+        { code: 'en', name: 'English', native: 'English' },
+        { code: 'hi', name: 'Hindi', native: 'हिन्दी' },
+        { code: 'sa', name: 'Sanskrit', native: 'संस्कृत' },
+        { code: 'af', name: 'Afrikaans', native: 'Afrikaans' },
+        { code: 'sq', name: 'Albanian', native: 'Shqip' },
+        { code: 'ar', name: 'Arabic', native: 'العربية' },
+        { code: 'hy', name: 'Armenian', native: 'Հայερեն' },
+        { code: 'az', name: 'Azerbaijani', native: 'Azərbaycan' },
+        { code: 'eu', name: 'Basque', native: 'Euskara' },
+        { code: 'be', name: 'Belarusian', native: 'Беларуская' },
+        { code: 'bs', name: 'Bosnian', native: 'Bosanski' },
+        { code: 'bg', name: 'Bulgarian', native: 'Български' },
+        { code: 'ca', name: 'Catalan', native: 'Català' },
         { code: 'zh-CN', name: 'Chinese (Simplified)', native: '中文(简体)' },
         { code: 'zh-TW', name: 'Chinese (Traditional)', native: '中文(繁體)' },
-        { code: 'hr', name: 'Croatian',             native: 'Hrvatski' },
-        { code: 'cs', name: 'Czech',                native: 'Čeština' },
-        { code: 'da', name: 'Danish',               native: 'Dansk' },
-        { code: 'nl', name: 'Dutch',                native: 'Nederlands' },
-        { code: 'eo', name: 'Esperanto',            native: 'Esperanto' },
-        { code: 'et', name: 'Estonian',             native: 'Eesti' },
-        { code: 'tl', name: 'Filipino',             native: 'Filipino' },
-        { code: 'fi', name: 'Finnish',              native: 'Suomi' },
-        { code: 'fr', name: 'French',               native: 'Français' },
-        { code: 'gl', name: 'Galician',             native: 'Galego' },
-        { code: 'ka', name: 'Georgian',             native: 'ქართული' },
-        { code: 'de', name: 'German',               native: 'Deutsch' },
-        { code: 'el', name: 'Greek',                native: 'Ελληνικά' },
-        { code: 'gu', name: 'Gujarati',             native: 'ગુજરાતી' },
-        { code: 'ht', name: 'Haitian Creole',       native: 'Kreyòl' },
-        { code: 'he', name: 'Hebrew',               native: 'עברית' },
-        { code: 'hu', name: 'Hungarian',            native: 'Magyar' },
-        { code: 'is', name: 'Icelandic',            native: 'Íslenska' },
-        { code: 'id', name: 'Indonesian',           native: 'Bahasa Indonesia' },
-        { code: 'ga', name: 'Irish',                native: 'Gaeilge' },
-        { code: 'it', name: 'Italian',              native: 'Italiano' },
-        { code: 'ja', name: 'Japanese',             native: '日本語' },
-        { code: 'kn', name: 'Kannada',              native: 'ಕನ್ನಡ' },
-        { code: 'ko', name: 'Korean',               native: '한국어' },
-        { code: 'la', name: 'Latin',                native: 'Latina' },
-        { code: 'lv', name: 'Latvian',              native: 'Latviešu' },
-        { code: 'lt', name: 'Lithuanian',           native: 'Lietuvių' },
-        { code: 'mk', name: 'Macedonian',           native: 'Македонски' },
-        { code: 'ms', name: 'Malay',                native: 'Bahasa Melayu' },
-        { code: 'ml', name: 'Malayalam',            native: 'മലയാളം' },
-        { code: 'mt', name: 'Maltese',              native: 'Malti' },
-        { code: 'mr', name: 'Marathi',              native: 'मराठी' },
-        { code: 'ne', name: 'Nepali',               native: 'नेपाली' },
-        { code: 'no', name: 'Norwegian',            native: 'Norsk' },
-        { code: 'fa', name: 'Persian',              native: 'فارسی' },
-        { code: 'pl', name: 'Polish',               native: 'Polski' },
-        { code: 'pt', name: 'Portuguese',           native: 'Português' },
-        { code: 'pa', name: 'Punjabi',              native: 'ਪੰਜਾਬੀ' },
-        { code: 'ro', name: 'Romanian',             native: 'Română' },
-        { code: 'ru', name: 'Russian',              native: 'Русский' },
-        { code: 'sr', name: 'Serbian',              native: 'Српски' },
-        { code: 'sk', name: 'Slovak',               native: 'Slovenčina' },
-        { code: 'sl', name: 'Slovenian',            native: 'Slovenščina' },
-        { code: 'es', name: 'Spanish',              native: 'Español' },
-        { code: 'sw', name: 'Swahili',              native: 'Kiswahili' },
-        { code: 'sv', name: 'Swedish',              native: 'Svenska' },
-        { code: 'ta', name: 'Tamil',                native: 'தமிழ்' },
-        { code: 'te', name: 'Telugu',               native: 'తెలుగు' },
-        { code: 'th', name: 'Thai',                 native: 'ภาษาไทย' },
-        { code: 'tr', name: 'Turkish',              native: 'Türkçe' },
-        { code: 'uk', name: 'Ukrainian',            native: 'Українська' },
-        { code: 'ur', name: 'Urdu',                 native: 'اردو' },
-        { code: 'vi', name: 'Vietnamese',           native: 'Tiếng Việt' },
-        { code: 'cy', name: 'Welsh',                native: 'Cymraeg' },
-        { code: 'yi', name: 'Yiddish',              native: 'ייִדיש' },
+        { code: 'hr', name: 'Croatian', native: 'Hrvatski' },
+        { code: 'cs', name: 'Czech', native: 'Čeština' },
+        { code: 'da', name: 'Danish', native: 'Dansk' },
+        { code: 'nl', name: 'Dutch', native: 'Nederlands' },
+        { code: 'eo', name: 'Esperanto', native: 'Esperanto' },
+        { code: 'et', name: 'Estonian', native: 'Eesti' },
+        { code: 'tl', name: 'Filipino', native: 'Filipino' },
+        { code: 'fi', name: 'Finnish', native: 'Suomi' },
+        { code: 'fr', name: 'French', native: 'Français' },
+        { code: 'gl', name: 'Galician', native: 'Galego' },
+        { code: 'ka', name: 'Georgian', native: 'ქართული' },
+        { code: 'de', name: 'German', native: 'Deutsch' },
+        { code: 'el', name: 'Greek', native: 'Ελληνικά' },
+        { code: 'gu', name: 'Gujarati', native: 'ગુજરાતી' },
+        { code: 'ht', name: 'Haitian Creole', native: 'Kreyòl' },
+        { code: 'he', name: 'Hebrew', native: 'עברית' },
+        { code: 'hu', name: 'Hungarian', native: 'Magyar' },
+        { code: 'is', name: 'Icelandic', native: 'Íslenska' },
+        { code: 'id', name: 'Indonesian', native: 'Bahasa Indonesia' },
+        { code: 'ga', name: 'Irish', native: 'Gaeilge' },
+        { code: 'it', name: 'Italian', native: 'Italiano' },
+        { code: 'ja', name: 'Japanese', native: '日本語' },
+        { code: 'kn', name: 'Kannada', native: 'ಕನ್ನಡ' },
+        { code: 'ko', name: 'Korean', native: '한국어' },
+        { code: 'la', name: 'Latin', native: 'Latina' },
+        { code: 'lv', name: 'Latvian', native: 'Latviešu' },
+        { code: 'lt', name: 'Lithuanian', native: 'Lietuvių' },
+        { code: 'mk', name: 'Macedonian', native: 'Македонски' },
+        { code: 'ms', name: 'Malay', native: 'Bahasa Melayu' },
+        { code: 'ml', name: 'Malayalam', native: 'മലയാളം' },
+        { code: 'mt', name: 'Maltese', native: 'Malti' },
+        { code: 'mr', name: 'Marathi', native: 'मराठी' },
+        { code: 'ne', name: 'Nepali', native: 'नेपाली' },
+        { code: 'no', name: 'Norwegian', native: 'Norsk' },
+        { code: 'fa', name: 'Persian', native: 'فارسی' },
+        { code: 'pl', name: 'Polish', native: 'Polski' },
+        { code: 'pt', name: 'Portuguese', native: 'Português' },
+        { code: 'pa', name: 'Punjabi', native: 'ਪੰਜਾਬੀ' },
+        { code: 'ro', name: 'Romanian', native: 'Română' },
+        { code: 'ru', name: 'Russian', native: 'Русский' },
+        { code: 'sr', name: 'Serbian', native: 'Српски' },
+        { code: 'sk', name: 'Slovak', native: 'Slovenčina' },
+        { code: 'sl', name: 'Slovenian', native: 'Slovenščina' },
+        { code: 'es', name: 'Spanish', native: 'Español' },
+        { code: 'sw', name: 'Swahili', native: 'Kiswahili' },
+        { code: 'sv', name: 'Swedish', native: 'Svenska' },
+        { code: 'ta', name: 'Tamil', native: 'தமிழ்' },
+        { code: 'te', name: 'Telugu', native: 'తెలుగు' },
+        { code: 'th', name: 'Thai', native: 'ภาษาไทย' },
+        { code: 'tr', name: 'Turkish', native: 'Türkçe' },
+        { code: 'uk', name: 'Ukrainian', native: 'Українська' },
+        { code: 'ur', name: 'Urdu', native: 'اردو' },
+        { code: 'vi', name: 'Vietnamese', native: 'Tiếng Việt' },
+        { code: 'cy', name: 'Welsh', native: 'Cymraeg' },
+        { code: 'yi', name: 'Yiddish', native: 'ייִדיש' },
       ];
 
       var gtCurrentLang = 'en';
@@ -269,33 +351,47 @@
         defLi.innerHTML =
           '<span>&#10227; Default</span>' +
           '<span class="lang-native">Original</span>';
-        defLi.onclick = function() { gtRestore(); };
+        defLi.onclick = function () {
+          gtRestore();
+        };
         list.appendChild(defLi);
 
         var q = (filter || '').toLowerCase().trim();
         var langs = q
-          ? GT_LANGS.filter(function(l) {
-              return l.name.toLowerCase().includes(q) || l.native.toLowerCase().includes(q);
+          ? GT_LANGS.filter(function (l) {
+              return (
+                l.name.toLowerCase().includes(q) ||
+                l.native.toLowerCase().includes(q)
+              );
             })
           : GT_LANGS;
 
         if (!langs.length) {
-          list.innerHTML += '<li style="padding:10px 12px;font-family:Georgia,serif;font-size:12px;color:rgba(61,12,2,0.4);font-style:italic;">No language found</li>';
+          list.innerHTML +=
+            '<li style="padding:10px 12px;font-family:Georgia,serif;font-size:12px;color:rgba(61,12,2,0.4);font-style:italic;">No language found</li>';
           return;
         }
 
-        langs.forEach(function(l) {
+        langs.forEach(function (l) {
           var li = document.createElement('li');
           if (l.code === gtCurrentLang) li.classList.add('gt-active');
           li.innerHTML =
-            '<span>' + l.name + '</span>' +
-            '<span class="lang-native">' + l.native + '</span>';
-          li.onclick = function() { gtSelect(l.code); };
+            '<span>' +
+            l.name +
+            '</span>' +
+            '<span class="lang-native">' +
+            l.native +
+            '</span>';
+          li.onclick = function () {
+            gtSelect(l.code);
+          };
           list.appendChild(li);
         });
       }
 
-      function gtFilterLangs(val) { gtBuildList(val); }
+      function gtFilterLangs(val) {
+        gtBuildList(val);
+      }
 
       function gtTogglePanel() {
         var panel = document.getElementById('gt-panel');
@@ -304,16 +400,25 @@
           var search = document.getElementById('gt-search');
           search.value = '';
           gtBuildList('');
-          setTimeout(function() { search.focus(); }, 60);
+          setTimeout(function () {
+            search.focus();
+          }, 60);
         }
       }
 
       function gtRestore() {
         // Clear Google Translate cookie and reload to restore original language
         function deleteCookie(name) {
-          document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
-          document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=' + location.hostname;
-          document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.' + location.hostname;
+          document.cookie =
+            name + '=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+          document.cookie =
+            name +
+            '=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=' +
+            location.hostname;
+          document.cookie =
+            name +
+            '=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.' +
+            location.hostname;
         }
         deleteCookie('googtrans');
         gtCurrentLang = '__default__';
@@ -334,10 +439,15 @@
       }
 
       // Close on outside click
-      document.addEventListener('click', function(e) {
+      document.addEventListener('click', function (e) {
         var panel = document.getElementById('gt-panel');
-        var btn   = document.getElementById('gt-toggle-btn');
-        if (panel && btn && !panel.contains(e.target) && !btn.contains(e.target)) {
+        var btn = document.getElementById('gt-toggle-btn');
+        if (
+          panel &&
+          btn &&
+          !panel.contains(e.target) &&
+          !btn.contains(e.target)
+        ) {
           panel.classList.remove('open');
         }
       });
@@ -346,36 +456,49 @@
       function gtHideBanner() {
         // Hide the iframe bar
         var banner = document.querySelector('.goog-te-banner-frame');
-        if (banner) { banner.style.setProperty('display', 'none', 'important'); }
+        if (banner) {
+          banner.style.setProperty('display', 'none', 'important');
+        }
 
         // Also hide by ID (Google sometimes uses this)
         var bannerById = document.getElementById('goog-gt-tt');
-        if (bannerById) { bannerById.style.setProperty('display', 'none', 'important'); }
+        if (bannerById) {
+          bannerById.style.setProperty('display', 'none', 'important');
+        }
 
         // Reset body top offset that Google forces
         document.body.style.setProperty('top', '0', 'important');
         document.body.style.setProperty('margin-top', '0', 'important');
         if (document.documentElement) {
-          document.documentElement.style.setProperty('margin-top', '0', 'important');
+          document.documentElement.style.setProperty(
+            'margin-top',
+            '0',
+            'important',
+          );
         }
 
         // Hide all VIpgJd elements (Google's Material banner classes)
-        document.querySelectorAll('[class*="VIpgJd"]').forEach(function(el) {
+        document.querySelectorAll('[class*="VIpgJd"]').forEach(function (el) {
           el.style.setProperty('display', 'none', 'important');
         });
       }
 
       // Watch for Google dynamically injecting its banner into the DOM
-      var gtObserver = new MutationObserver(function(mutations) {
-        mutations.forEach(function(m) {
-          if (m.addedNodes.length) { gtHideBanner(); }
+      var gtObserver = new MutationObserver(function (mutations) {
+        mutations.forEach(function (m) {
+          if (m.addedNodes.length) {
+            gtHideBanner();
+          }
         });
       });
-      gtObserver.observe(document.documentElement, { childList: true, subtree: true });
+      gtObserver.observe(document.documentElement, {
+        childList: true,
+        subtree: true,
+      });
 
       // Belt-and-suspenders: also poll every 500ms for the first 10 seconds
       var gtPollCount = 0;
-      var gtPollTimer = setInterval(function() {
+      var gtPollTimer = setInterval(function () {
         gtHideBanner();
         gtPollCount++;
         if (gtPollCount >= 20) clearInterval(gtPollTimer);
@@ -385,7 +508,7 @@
       function googleTranslateElementInit() {
         new google.translate.TranslateElement(
           { pageLanguage: 'en', autoDisplay: false },
-          'google_translate_element'
+          'google_translate_element',
         );
         // Hide banner immediately after init too
         setTimeout(gtHideBanner, 200);
@@ -395,9 +518,9 @@
 
     <script
       type="text/javascript"
-      src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
-    </script>
+      src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+    ></script>
 
     <script type="module" src="/src/main.js"></script>
-</body>
+  </body>
 </html>
